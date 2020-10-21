@@ -1,0 +1,9 @@
+ /* Custom UI Grid */
+.Grid {
+	display: grid;
+	padding: 15px 1.5rem;
+	height: calc(180px);
+    justify-content: center;
+	overflow-y: auto;
+	justify-items: center;
+}

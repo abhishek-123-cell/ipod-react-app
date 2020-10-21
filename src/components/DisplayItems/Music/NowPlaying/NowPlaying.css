@@ -1,0 +1,52 @@
+/* Container */
+.NowPlaying {
+	height: 210px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Album Art */
+.nowPlayingImg {
+	width: 120px;
+	height: auto;
+	border-radius: 5%;
+	position: relative;
+}
+
+/* Track Name */
+.nowPlayingName {
+	text-align: center;
+	margin-top: 0.6rem;
+	width: 80%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+/* Track Artist */
+.nowPlayingArtist , .playTime{
+    font-size: 0.8rem;
+    color: var(--primary-text);
+}
+
+/* Play/Pause Icon */
+.nowPlayingIcon {
+	position: absolute;
+	top: 100%;
+	left: 100%;
+	transform: translate(-60%, -80%);
+	line-height: 30px;
+	font-size: 0.7rem;
+	height: 30px;
+	width: 30px;
+	background-color: var(--active-setting);
+	color: ivory;
+	text-align: center;
+	border-radius: 50%;
+}
+
+.fa-play{
+    margin-left: 4px;
+}

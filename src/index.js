@@ -1,13 +1,36 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
 
+import rootReducer from "./store/reducers/reducer";
+import App from "./App";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+import "./index.css";
+
+// Custom Thunk Middleware
+// Make isAppDrawerOpen and currentMenuItem available to all reducers
+const customThunkMiddleWare = ({ dispatch, getState }) => next => action => {
+	if (typeof action === "function") return action(dispatch, getState);
+
+	const state = getState();
+	action.isAppDrawerOpen = state.appDrawer.isAppDrawerOpen;
+	action.currentMenuItem = state.appDrawer.currentMenuItem;
+	return next(action);
+};
+
+// Create Store with Redux Devtools Extension
+const store = createStore(
+	rootReducer,
+	composeWithDevTools(applyMiddleware(customThunkMiddleWare))
 );
 
+ReactDOM.render(
+	<React.StrictMode>
+		<Provider store={store}>
+			<App />
+		</Provider>
+	</React.StrictMode>,
+	document.getElementById("root")
+);

@@ -1,0 +1,19 @@
+.Settings{
+    display: flex;
+    padding: 0.2rem;
+    padding-top: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 210px;
+    width: 100%;
+    box-sizing: border-box;
+    color: gray;
+}
+
+/* Settings Icon on top */
+.SettingsIcon{
+    margin: 8px;
+    color: var(--secondary-text);
+    font-size: 1.6rem;
+}

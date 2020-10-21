@@ -1,0 +1,16 @@
+.Error {
+	height: 210px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.9rem;
+	color: var(--primary-text);
+}
+
+.errorIcon {
+	font-size: 4rem;
+	color: var(--secondary-text);
+	margin-bottom: 1rem;
+}
